@@ -1,0 +1,28 @@
+version: '3'
+services:
+  western-gym-bud:
+    build: .
+    ports:
+      - 5000:5000
+    env_file: database.env
+    volumes:
+      - .:/western-gym-bud-app
+  data-collection:
+    build: 
+      dockerfile: Dockerfile
+      context: ./src/data
+    ports:
+      - 5001:5001
+    env_file: database.env
+    volumes:
+      - .:/data-collection
+  db:
+    image: postgres:15-alpine
+    env_file: database.env
+    ports: 
+      - 5433:5432
+    volumes:
+      - postgresql-data:/var/lib/postgresql/data
+    restart: always
+volumes:
+  postgresql-data:

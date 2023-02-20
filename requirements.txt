@@ -1,0 +1,4 @@
+psycopg2==2.9.5
+python-dotenv==0.21.1
+flask==2.2.3
+tweepy==4.12.1
