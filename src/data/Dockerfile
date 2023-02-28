@@ -12,4 +12,4 @@ RUN apk update && \
     
 COPY . .
 
-CMD [ "python3", "./src/data/data.py"]
+CMD [ "python3", "./src/data/scrape_tweets.py"]
