@@ -1,0 +1,11 @@
+<html>
+    <head>
+        <title>{% block title %} {% endblock %}</title>
+        <!-- Bootstrap stuff would go above this, so we can override bootstrap -->
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css')}}"></link>
+    </head>
+    <body>
+        {% block content %}
+        {% endblock %}
+    </body>
+</html>
