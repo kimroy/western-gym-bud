@@ -1,10 +1,10 @@
 import psycopg2
 
-from helper_functions import get_env_var
+import helper_functions
 
-POSTGRES_DB = get_env_var('POSTGRES_DB')
-POSTGRES_USER = get_env_var('POSTGRES_USER')
-POSTGRES_PASSWORD = get_env_var('POSTGRES_PASSWORD')
+POSTGRES_DB = helper_functions.get_env_var('POSTGRES_DB')
+POSTGRES_USER = helper_functions.get_env_var('POSTGRES_USER')
+POSTGRES_PASSWORD = helper_functions.get_env_var('POSTGRES_PASSWORD')
 
 
 class Database:

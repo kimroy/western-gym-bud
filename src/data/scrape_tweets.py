@@ -5,13 +5,13 @@ import tweepy as tw
 from snscrape.modules import twitter as sntwitter
 import datetime
 
+from helper_functions import get_env_var
 from db import Database
 from tweet import Tweet
-from helper_functions import get_env_var
 
 TWITTER_USER = get_env_var('TWITTER_USER')
 SINCE_SEARCH = get_env_var('SINCE_SEARCH')
-UNTIL_SEARCH = get_env_var('UNTIL_SEARCH')
+UNTIL_SEARCH = str(datetime.date.today())
 
 
 def parse_tweet_values(tweet_text: list) -> list[int]:
